@@ -9,11 +9,15 @@ jQuery(document).ready(function(){
 
 function searchForPhoneNumbers(){
    var none = true;
-   var html = document.body.innerHTML;
-   while((search = phoneRegex.exec(document.body.innerHTML)) != null){
-      html = html.replace(search[0], search[0] + "<br/><img src='http://api.qrserver.com/v1/create-qr-code/?data=TEL%3A1" + search[0].replace(/[^0-9\.]+/g, '') + "&size=60x60' style='height: 60px; width: 60px;'><br/>");
+   while((search = phoneRegex.exec(document.body.innerHTML)) != null){      
+      $("nobr").filter(function(i, el) {
+	 var s = search[0].replace("(", "\\(").replace(")", "\\)");
+         return !!$(el).text().match(s);
+      }).append("<br/><img src='http://qrcode.kaywa.com/img.php?s=5&d=TEL%3A" + search[0].replace(/[^0-9\.]+/g, '') + "'/><br/>");
       none = false;
    }
-   document.body.innerHTML = html;
    return none;
+
 }
+
+//<br/><img src='http://qrcode.kaywa.com/img.php?s=5&d=TEL%3A7345225200/><br/>
