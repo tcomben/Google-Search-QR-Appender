@@ -1,0 +1,14 @@
+{
+  "name": "QR Append",
+  "version": "1.0",
+  "description": "Appends QR codes to Google search result pages.",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/*"],
+      "js": ["js/jquery-1.6.4.min.js", "js/qrAppend.js", "js/jquery.qrcode.min.js"]
+    }
+  ]
+}
