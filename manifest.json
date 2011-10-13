@@ -1,14 +1,22 @@
 {
-  "name": "QR Append",
+  "name": "Phone QR Finder",
   "version": "1.0",
-  "description": "Appends QR codes to Google search result pages.",
+  "description": "Appends phone QR codes to Google search result pages.",
   "browser_action": {
     "default_icon": "icon.png"
   },
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*"],
-      "js": ["js/jquery-1.6.4.min.js", "js/qrAppend.js", "js/jquery.qrcode.min.js"]
+      "matches": ["http://www.google.com/search*", "http://www.google.com/webhp?*"],
+      "js": ["js/jquery-1.6.4.min.js", "js/jquery.qrcode.min.js", "js/qrAppend.js"]
     }
-  ]
+  ],
+  "icons" : {
+    "16": "images/icon-16x16.png",
+    "19": "images/icon19.png",
+    "48": "images/icon-48x48.png",
+    "128": "images/icon-128x128.png",
+    "130": "images/icon-130x130.png",
+    "550": "images/icon-550x550.png"
+  }
 }
