@@ -1,7 +1,7 @@
 {
-  "name": "Phone QR Finder",
+  "name": "QR Code Phone Number Appender",
   "version": "1.0",
-  "description": "Appends phone QR codes to Google search result pages.",
+  "description": "Appends phone number QR codes to Google search result pages.",
   "content_scripts": [
     {
       "matches": ["http://www.google.com/search*", "http://www.google.com/webhp?*"],
